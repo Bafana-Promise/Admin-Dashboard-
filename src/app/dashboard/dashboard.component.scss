@@ -1,0 +1,124 @@
+// @font-face {
+//     font-family: 'Poppins';
+//     src: url('assets/fonts/Poppins-Regular.ttf') format("truetype");
+//     font-weight:300;
+//   }
+$colorBlue: #177ee6;
+$colorGreen: #4bb252;
+$colorPurple: #4f5daf;
+$colorMaroon: #d80c4e;
+$white: #FFFFFF;
+.backGroundColor {
+    background-color: #e6eef2;
+}
+
+.toolBarPadding {
+    padding: 20px 0px;
+}
+
+.homeIcon {
+    font-size: 19px;
+    position: relative;
+    top: 3px;
+}
+
+.textSizeHomeDashboard {
+    font-size: 16px;
+    position: relative;
+    left: 2px;
+}
+
+.fullHeightMinusTopBar {
+    height: calc(100vh - 85px) !important;
+    overflow-y: scroll;
+}
+
+.loggedOnBG {
+    background-position: center;
+    background-size: cover;
+    padding: 20px;
+    background-repeat: no-repeat;
+}
+
+.marginBottom2Em {
+    margin-bottom: 2em;
+}
+
+.textAlignCenter {
+    text-align: center;
+    .textSize {
+        font-family: Poppins;
+        font-size: 25px;
+        letter-spacing: 1px;
+        font-weight: bold;
+    }
+}
+
+.textContainer {
+    color: #bbbdbe;
+}
+
+.arrowUpwardsIcon {
+    font-size: 12px;
+    font-weight: 800;
+    position: relative;
+    top: 4px;
+    color: #bbbdbe;
+}
+
+.paddingLeft {
+    padding-left: 30px;
+}
+
+.paddingRight {
+    padding-right: 30px;
+}
+
+.cursorPointer {
+    cursor: pointer;
+}
+
+.whiteColor {
+    color: $white;
+}
+
+.blueCard {
+    width: 74px;
+    height: 74px;
+}
+
+.bgColorBlue {
+    background-color: $colorBlue;
+}
+
+.bgColorGreen {
+    background-color: $colorGreen;
+}
+
+.bgColorPurple {
+    background-color: $colorPurple;
+}
+
+.bgColorMaroon {
+    background-color: $colorMaroon;
+}
+
+.arrowTextContainer {
+    position: relative;
+    top: 8px;
+}
+
+.whiteCard {
+    width: 133px;
+    height: 74px;
+}
+
+.iconSizeColor {
+    font-size: 69px;
+    color: #fff;
+}
+
+.marginContainer {
+    margin: 0 0 10px;
+    font-weight: 500;
+}

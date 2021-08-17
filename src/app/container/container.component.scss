@@ -1,0 +1,50 @@
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+.header {
+    color: #9db2b3;
+    cursor: pointer;
+    border: none;
+    margin-top: 12px;
+    padding: 0px 0px 22px 30px;
+    h2.active {
+        color: #00a9e2;
+        height: 12px;
+    }
+}
+
+.naviga {
+    background-color: #232d32;
+    height: 100vh;
+    border-right: 1px solid #555;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    width: 252px;
+}
+
+.mainC {
+    text-align: center;
+    background-color: white;
+    color: black;
+    height: 100vh;
+}
+
+.iconPosition {
+    position: relative;
+    top: 4px;
+    right: 5px;
+    font-size: 20px;
+}
+
+.iconPos {
+    position: relative;
+    top: 4px;
+    left: 47px;
+    font-size: 20px;
+}
+
+.height60px {
+    height: 60px;
+    background-color: #00a3bf;
+}

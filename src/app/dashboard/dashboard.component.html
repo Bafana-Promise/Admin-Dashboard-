@@ -1,0 +1,89 @@
+<div class="backGroundColor" fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false" fxFill>
+    <div fxLayout="column wrap" fxFlex="100" fxLayoutGap="12px" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+        <div fxLayout="row wrap" class="toolBarPadding" fxLayoutAlign="space-between center" [fxShow]="true" [fxHide]="false">
+            <div fxLayout="row wrap" class="toolBarcolorleft relative" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+                <h1 class="paddingLeft">
+                    <span class="material-icons homeIcon">home</span>
+                    <span class="textSizeHomeDashboard"> Home /</span>
+                    <span class="textSizeHomeDashboard"> Dashboard</span>
+                </h1>
+            </div>
+            <div fxLayout="row wrap" class="toolBarcolorright relative" fxLayoutGap="15px" fxLayoutAlign="space-between center" [fxShow]="true" [fxHide]="false">
+                <h3 class="paddingRight">
+                    <mat-chip-list aria-label="Fish selection">
+                        <mat-chip color="accent" selected><span class="material-icons">fast_rewind</span> Book</mat-chip>
+                    </mat-chip-list>
+                </h3>
+            </div>
+        </div>
+
+        <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+            <div fxLayout="row wrap" class="paddingLeft relative" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false" *ngFor="let item of cards">
+                <mat-card class="example-card blueCard paddingLeft" [ngClass]="{true: &apos;notificationBox paddingTopBottom15px cursorPointer&apos;  + &apos; &apos; + item.backGround}[true]">
+                    <mat-card-content>
+                        <span class="material-icons iconSizeColor">{{item.icon}}</span>
+                    </mat-card-content>
+                </mat-card>
+                <mat-card class="example-card whiteCard">
+                    <mat-card-content>
+                        <div class="arrowTextContainer" fxLayout="row wrap" fxLayoutGap="4px" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+                            <span class="material-icons arrowUpwardsIcon">{{item.arrowicon}}</span>
+                            <p class="textContainer">{{item.header}}</p>
+                        </div>
+                        <div fxLayout="column wrap" fxLayoutGap="12px" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+                            <h1 class="marginContainer">{{item.amount}}</h1>
+                        </div>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </div>
+
+        <div class="paddingRight paddingLeft" fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+            <table mat-table [dataSource]="users" class="table-width-fix paddingRight paddingLeft">
+                <tr mat-header-row *matHeaderRowDef="[&apos;country&apos;,&apos;client&apos;,&apos;changes&apos;,&apos;budget&apos;,&apos;status&apos;,&apos;states&apos;]"></tr>
+                <tr mat-row *matRowDef="let row; columns: [&apos;country&apos;,&apos;client&apos;,&apos;changes&apos;,&apos;budget&apos;,&apos;status&apos;,&apos;states&apos;];"></tr>
+
+                <ng-container matColumnDef="country">
+                    <th mat-header-cell *matHeaderCellDef>Country</th>
+                    <td mat-cell *matCellDef="let table; let i = index;">{{table.country}}</td>
+                </ng-container>
+
+                <ng-container matColumnDef="client">
+                    <th mat-header-cell *matHeaderCellDef>Client</th>
+                    <td mat-cell *matCellDef="let table; let i = index;">{{table.client}}</td>
+                </ng-container>
+
+                <ng-container matColumnDef="changes">
+                    <th mat-header-cell *matHeaderCellDef>Changes</th>
+                    <td mat-cell *matCellDef="let table; let i = index;">{{table.changes}}</td>
+                </ng-container>
+
+                <ng-container matColumnDef="budget">
+                    <th mat-header-cell *matHeaderCellDef>budget</th>
+                    <td mat-cell *matCellDef="let table; let i = index;">{{table.budget}}</td>
+                </ng-container>
+
+                <ng-container matColumnDef="status">
+                    <th mat-header-cell *matHeaderCellDef>Status</th>
+                    <td mat-cell *matCellDef="let table; let i = index;">{{table.status}}</td>
+                </ng-container>
+
+                <ng-container matColumnDef="states">
+                    <th mat-header-cell *matHeaderCellDef>States</th>
+                    <td mat-cell *matCellDef="let table; let i = index;">{{table.states}}</td>
+                </ng-container>
+                <!-- <ng-container matColumnDef="bd1787e6-2332-c1ac-8904-3d4739395203">
+              <th mat-header-cell *matHeaderCellDef>Action</th>
+              <td mat-cell *matCellDef="let table; let i = index;">
+                <div fxLayout="row wrap" fxLayoutGap="10px" fxLayoutAlign="start center" [fxShow]="true" [fxHide]="false">
+                  <mat-icon class="iconCusor" (click)="deleteUser(table._id)" *ngIf="admin.role.id == &apos;s&apos;" color="warn">delete</mat-icon>
+                  <mat-icon class="iconCusor" (click)="edit(table)" color="primary">edit</mat-icon>
+                </div>
+              </td>
+            </ng-container> -->
+            </table>
+        </div>
+
+
+    </div>
+</div>

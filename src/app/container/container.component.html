@@ -1,0 +1,93 @@
+<mat-drawer-container class="example-container">
+    <mat-drawer class="naviga" mode="side" #sidebar>
+        <div>
+
+            <div class="header" *ngFor="let item of sidenavItems">
+                <div fxLayout="row wrap" fxLayoutAlign="space-between center" fxLayoutGap="10px" [fxShow]="true" [fxHide]="false">
+                    <div routerLink="{{item.link}}" routerLinkActive="active"><span class="material-icons iconPosition" routerLinkActive="active">
+                    {{item.icon}}
+              </span> {{item.name}} <span class="material-icons iconPos">{{item.icon1}}</span></div>
+                </div>
+            </div>
+            <mat-divider class="sideNavColor"></mat-divider>
+        </div>
+    </mat-drawer>
+    <mat-drawer-content class="mainC">
+        <p>
+            <mat-toolbar color="primary">
+                <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+                <mat-icon (click)="sidebar.toggle()">menu</mat-icon>
+              </button>
+                <span>My App</span>
+                <span class="example-spacer"></span>
+                <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+                <mat-icon>favorite</mat-icon>
+              </button>
+                <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+                <mat-icon>share</mat-icon>
+              </button>
+            </mat-toolbar>
+        </p>
+        Main content
+        <router-outlet></router-outlet>
+    </mat-drawer-content>
+</mat-drawer-container>
+
+
+<!-- don't skip the line bruh wami -->
+
+<!-- <mat-drawer-container class="mainC" class="example-container">
+    <mat-drawer class="naviga" #sidenav mode="over">
+        <div fxLayout="row" fxLayoutAlign="start stretch">
+            <div fxFlex="100" class="relative" fxLayout="column" fxLayoutAlign="start stretch">
+                <img class="absolute bannerTop fullWidth" src="">
+                <div fxLayout="column" fxLayoutAlign="center center" class="marginTop2em ">
+                    <div class="round darkBlueBg width100px height100px relative">
+                        <mat-icon (click)="sidenav.close()" class="absolute close whiteColour">close</mat-icon>
+                        <h1 class="absolute  whiteColour">Promise</h1>
+                    </div>
+
+                </div>
+                <div fxLayout="column" class="marginTop15px" fxLayoutAlign="start center" fxLayoutGap="10px">
+                    <h3 class="bold whiteColour">Bafana</h3>
+                    <h4 class="bold whiteColour">bafana@gmail.com</h4>
+                </div>
+                <div *ngFor="let nav of sidenavItems; let i = index" [routerLink]="nav['link']" routerLinkActive="active" fxLayout="column" [style.margin-top]="(i == 0) ? '10px !important' : ''" class="borderBottom" fxLayoutAlign="start start" [ngClass]="(i == sidenavItems.length - 1 ) ?  'none' : ''">
+                    <div fxLayout="row" class="margin15px marginLeft20px" fxLayoutAlign="center center" fxLayoutGap="20px">
+                        <mat-icon [style.color]="(i == sidenavItems.length - 1 ) ? '#00a3bf !important' : ''" [class]="nav.class">{{ nav['icon'] }}</mat-icon>
+                        <h3 class="header font-size18px">{{ nav['name'] }}
+                            <mat-icon [style.color]="(i == sidenavItems.length - 1 ) ? '#00a3bf !important' : ''" [class]="nav.class">{{ nav['icon1'] }}</mat-icon>
+                        </h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </mat-drawer>
+    <mat-drawer-content class="mainC">
+        <div fxLayout="row" fxLayoutAlign="center start" fxFill>
+            <div fxLayout="column" fxFlex="100" fxLayoutAlign="start stretch">
+                <div class="header padding10px height60px darkBlueBg" fxLayout="row" fxLayoutAlign="space-between center">
+                    <div fxFlex="30" fxLayout="column" fxLayoutAlign="start start">
+                        <button mat-mini-fab color="primary">
+            <mat-icon (click)="sidenav.toggle()">menu</mat-icon>
+          </button>
+                    </div>
+                </div>
+                <div class="marginTop2em routerHeight" fxLayout="column" fxLayoutAlign="start stretch">
+                    <router-outlet></router-outlet>
+                </div>
+
+                <div class="footer height60px borderTop1px" fxLayout="row " fxLayoutAlign="center center ">
+                    <div fxLayout="column " fxFlex="30 " fxFlex.xs="100 " fxLayoutAlign="start stretch ">
+                        <div fxLayout="row " fxLayoutGap="3px " fxLayoutAlign="start center ">
+                            <div class="icon-box height58px " fxFlex="25 " fxFlex.xs="25 " *ngFor="let item of sidenavItems " fxLayout="column " fxLayout.xs="column " fxLayoutAlign="center center ">
+                                <mat-icon>{{ item.icon }}</mat-icon>
+                                <mat-label class="font10px bold ">{{ item.name }}</mat-label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </mat-drawer-content>
+</mat-drawer-container> -->
